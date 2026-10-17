@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>谷粒 · 一只牡丹苹果绿奥桂小鹦鹉</title>
+<meta name="description" content="谷粒，一只手养的牡丹苹果绿奥桂鹦鹉，住在浙江温州。希望每天和主人开开心心生活。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%236F9A5B'/%3E%3Ccircle cx='32' cy='30' r='14' fill='%23F7F3EA'/%3E%3Ccircle cx='27' cy='27' r='2' fill='%2333412F'/%3E%3Ccircle cx='37' cy='27' r='2' fill='%2333412F'/%3E%3Cpath d='M32 33 L36 39 L28 39 Z' fill='%23E9A48B'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap">
+<style>
+/* ============ 基础 ============ */
+:root{
+  --cream:#F8F4EA;
+  --ink:#33412F;
+  --ink-soft:#5C6B54;
+  --green:#6F9A5B;
+  --green-deep:#3F6B2E;
+  --green-soft:#E4EDDB;
+  --peach:#E9A48B;
+  --white:#FFFFFF;
+  --shadow:0 10px 30px rgba(51,65,47,.10);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* ============ 顶部导航 ============ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(248,244,234,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(51,65,47,.08);
+}
+.nav-inner{
+  max-width:1080px;margin:0 auto;padding:12px 20px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.brand{
+  display:flex;align-items:center;gap:10px;
+  font-weight:900;font-size:18px;color:var(--green-deep);
+}
+.brand-mark{
+  width:34px;height:34px;border-radius:50%;
+  background:var(--green);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--white);font-size:16px;
+}
+.nav-links{display:flex;gap:22px;font-size:15px;font-weight:500;color:var(--ink-soft)}
+.nav-links a:hover{color:var(--green-deep)}
+
+/* ============ Hero ============ */
+.hero{
+  position:relative;
+  min-height:640px;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:url("assets/hero.jpg") center 30% / cover no-repeat;
+}
+.hero-veil{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(51,65,47,.28) 0%,rgba(51,65,47,.10) 40%,rgba(248,244,234,0) 62%,rgba(248,244,234,.92) 96%);
+}
+.hero-inner{
+  position:relative;z-index:2;
+  padding:96px 20px 64px;
+  max-width:760px;
+  animation:rise .8s ease-out both;
+}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.avatar{
+  width:120px;height:120px;margin:0 auto 22px;
+  border-radius:50%;
+  border:4px solid var(--white);
+  box-shadow:var(--shadow);
+  object-fit:cover;
+}
+.hero h1{
+  font-size:52px;font-weight:900;letter-spacing:.06em;
+  color:var(--white);
+  text-shadow:0 2px 18px rgba(51,65,47,.45);
+}
+.hero-sub{
+  margin-top:10px;
+  color:rgba(255,255,255,.96);
+  font-size:17px;font-weight:500;
+  text-shadow:0 1px 10px rgba(51,65,47,.5);
+}
+.hero-bio{
+  margin:16px auto 26px;
+  max-width:560px;
+  color:var(--ink);
+  font-size:15px;
+  background:rgba(255,255,255,.82);
+  border-radius:14px;
+  padding:12px 20px;
+  box-shadow:var(--shadow);
+}
+.hero-cta{
+  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 28px;border-radius:999px;
+  font-size:16px;font-weight:700;
+  cursor:pointer;border:none;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.btn-primary{
+  background:var(--green);color:var(--white);
+  box-shadow:0 8px 20px rgba(63,107,46,.35);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(63,107,46,.4)}
+.btn-ghost{
+  background:rgba(255,255,255,.9);color:var(--ink);
+  box-shadow:var(--shadow);
+}
+.btn-ghost:hover{transform:translateY(-2px)}
+
+/* ============ 区块通用 ============ */
+.section{padding:72px 0}
+.sec-head{margin-bottom:40px}
+.sec-tag{
+  display:inline-block;
+  font-size:13px;font-weight:700;letter-spacing:.28em;
+  color:var(--green-deep);
+  margin-bottom:12px;
+}
+.sec-title{font-size:32px;font-weight:900;color:var(--ink);line-height:1.3}
+.sec-desc{margin-top:10px;font-size:16px;color:var(--ink-soft);max-width:640px}
+
+/* ============ 关于谷粒 ============ */
+.about-grid{
+  display:grid;grid-template-columns:1fr;gap:28px;
+  align-items:center;
+}
+.about-copy p{margin-bottom:14px;color:var(--ink-soft)}
+.about-copy p strong{color:var(--ink)}
+.facts{
+  display:grid;grid-template-columns:1fr 1fr;gap:14px;
+}
+.fact{
+  background:var(--white);
+  border-radius:16px;
+  padding:20px 18px;
+  text-align:center;
+  box-shadow:var(--shadow);
+}
+.fact-num{font-size:30px;font-weight:900;color:var(--green-deep);line-height:1.2}
+.fact-label{font-size:14px;color:var(--ink-soft);margin-top:4px}
+.fact-peach .fact-num{color:var(--peach)}
+.meta-row{
+  display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;
+}
+.chip{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--green-soft);color:var(--green-deep);
+  font-size:14px;font-weight:500;
+  padding:6px 14px;border-radius:999px;
+}
+
+/* ============ 日常 ============ */
+.daily{background:var(--white)}
+.daily-grid{
+  display:grid;grid-template-columns:1fr;gap:24px;
+}
+.daily-card{
+  border-radius:18px;overflow:hidden;
+  background:var(--cream);
+  box-shadow:var(--shadow);
+  transition:transform .2s ease;
+}
+.daily-card:hover{transform:translateY(-4px)}
+.daily-card img{width:100%;height:340px;object-fit:cover}
+.daily-body{padding:16px 20px 20px}
+.daily-title{font-size:18px;font-weight:900;color:var(--ink)}
+.daily-text{font-size:14.5px;color:var(--ink-soft);margin-top:6px}
+
+/* ============ 抖音主页 ============ */
+.douyin-grid{
+  display:grid;grid-template-columns:1fr;gap:32px;
+  align-items:center;
+}
+.phone{
+  max-width:300px;margin:0 auto;
+  border-radius:26px;
+  border:8px solid #1C1F1A;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.phone img{width:100%}
+.douyin-copy h3{font-size:24px;font-weight:900;margin-bottom:12px}
+.douyin-copy p{color:var(--ink-soft);margin-bottom:16px}
+.topic-card{
+  background:var(--green-soft);
+  border-radius:16px;
+  padding:18px 22px;
+  margin-bottom:22px;
+}
+.topic-name{font-size:18px;font-weight:900;color:var(--green-deep)}
+.topic-meta{font-size:14px;color:var(--ink-soft);margin-top:4px}
+.id-line{
+  font-size:15px;color:var(--ink-soft);
+}
+.id-line strong{color:var(--ink);font-weight:700}
+
+/* ============ 页脚 ============ */
+.footer{
+  background:var(--ink);color:rgba(255,255,255,.82);
+  padding:48px 0 40px;
+  font-size:14px;
+}
+.footer-inner{display:flex;flex-direction:column;gap:12px;text-align:center}
+.footer-brand{font-size:20px;font-weight:900;color:var(--white)}
+.footer .note{color:rgba(255,255,255,.55);font-size:12.5px}
+
+/* ============ Toast ============ */
+.toast{
+  position:fixed;left:50%;bottom:36px;transform:translateX(-50%) translateY(20px);
+  background:var(--ink);color:var(--white);
+  padding:12px 22px;border-radius:12px;
+  font-size:15px;font-weight:500;
+  opacity:0;pointer-events:none;
+  transition:opacity .25s ease,transform .25s ease;
+  z-index:100;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ============ 响应式 ============ */
+@media (min-width:768px){
+  .hero{min-height:680px}
+  .avatar{width:140px;height:140px}
+  .hero h1{font-size:64px}
+  .hero-sub{font-size:19px}
+  .hero-bio{font-size:16px}
+  .about-grid{grid-template-columns:1.2fr .8fr;gap:48px}
+  .daily-grid{grid-template-columns:repeat(3,1fr);gap:24px}
+  .daily-card img{height:300px}
+  .douyin-grid{grid-template-columns:.75fr 1.25fr;gap:56px}
+  .footer-inner{flex-direction:row;justify-content:space-between;text-align:left}
+  .section{padding:88px 0}
+  .sec-title{font-size:38px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 导航 ============ -->
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="回到顶部">
+      <span class="brand-mark" aria-hidden="true">谷</span>
+      <span>谷粒</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#about">关于它</a>
+      <a href="#daily">日常</a>
+      <a href="#douyin">抖音</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ Hero ============ -->
+<section class="hero" id="top">
+  <div class="hero-bg" role="img" aria-label="牡丹鹦鹉谷粒的照片"></div>
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <img class="avatar" src="assets/avatar.png" alt="谷粒的头像，一只浅色羽毛的牡丹鹦鹉">
+    <h1>谷粒</h1>
+    <p class="hero-sub">一只牡丹苹果绿奥桂 · 手养小鹦鹉</p>
+    <p class="hero-bio">是只小鹦鹉&#x1F9DC; 牡丹苹果绿奥桂，希望每天和主人开开心心生活。</p>
+    <div class="hero-cta">
+      <button class="btn btn-primary" onclick="goDouyin()">去抖音找它</button>
+      <button class="btn btn-ghost" onclick="copyId()">复制抖音号</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 关于谷粒 ============ -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">ABOUT</span>
+      <h2 class="sec-title">关于谷粒</h2>
+      <p class="sec-desc">谷粒是一只手养大的牡丹鹦鹉，属于苹果绿奥桂色系。它用一对圆溜溜的黑眼睛，观察着家里的一切。</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p><strong>手养长大</strong>，所以谷粒一点也不怕人。它喜欢站在主人的手指上歪头看人，也喜欢被温柔地摸摸头。</p>
+        <p>它的羽毛是浅浅的奶油色，喙是粉橘色的。每天都要花不少时间梳理羽毛，把自己收拾得干干净净。</p>
+        <p>家住<strong>浙江 · 温州</strong>，愿望很简单：<strong>希望每天和主人开开心心生活</strong>。</p>
+        <div class="meta-row">
+          <span class="chip">品种：牡丹苹果绿奥桂</span>
+          <span class="chip">定位：浙江 · 温州</span>
+        </div>
+      </div>
+      <div class="facts" aria-label="抖音主页数据">
+        <div class="fact">
+          <div class="fact-num">229</div>
+          <div class="fact-label">获赞</div>
+        </div>
+        <div class="fact fact-peach">
+          <div class="fact-num">13</div>
+          <div class="fact-label">粉丝</div>
+        </div>
+        <div class="fact">
+          <div class="fact-num">28</div>
+          <div class="fact-label">关注</div>
+        </div>
+        <div class="fact fact-peach">
+          <div class="fact-num">11</div>
+          <div class="fact-label">互关</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 日常 ============ -->
+<section class="section daily" id="daily">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">DAILY</span>
+      <h2 class="sec-title">手养鹦鹉日常</h2>
+      <p class="sec-desc">在「手养鹦鹉日常」话题下，谷粒有 1.3 万人陪着一起看。每一天都是被小鸟治愈的一天。</p>
+    </div>
+    <div class="daily-grid">
+      <article class="daily-card">
+        <img src="assets/daily1.jpg" alt="谷粒站在主人的手指上">
+        <div class="daily-body">
+          <h3 class="daily-title">站在手上</h3>
+          <p class="daily-text">谷粒最黏人。伸出手指，它就稳稳站上来，歪头看着你，像是在问今天玩什么。</p>
+        </div>
+      </article>
+      <article class="daily-card">
+        <img src="assets/daily2.jpg" alt="谷粒低头吃小米">
+        <div class="daily-body">
+          <h3 class="daily-title">开饭时间</h3>
+          <p class="daily-text">最爱小米和谷物。低头认真干饭的样子，能把一天的疲惫都治愈掉。</p>
+        </div>
+      </article>
+      <article class="daily-card">
+        <img src="assets/daily3.jpg" alt="谷粒站在栖木上梳理羽毛">
+        <div class="daily-body">
+          <h3 class="daily-title">理毛时刻</h3>
+          <p class="daily-text">每天雷打不动的梳毛时间。羽毛要一根一根理顺，这样才是一只精神的小鹦鹉。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 抖音主页 ============ -->
+<section class="section" id="douyin">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">DOUYIN</span>
+      <h2 class="sec-title">在抖音认识它</h2>
+      <p class="sec-desc">谷粒的抖音主页记录了它从一只小绒球长大的全过程。</p>
+    </div>
+    <div class="douyin-grid">
+      <div class="phone">
+        <img src="assets/douyin_home.jpg" alt="谷粒的抖音主页截图">
+      </div>
+      <div class="douyin-copy">
+        <div class="topic-card">
+          <div class="topic-name"># 手养鹦鹉日常</div>
+          <div class="topic-meta">1.3 万人参与 · 谷粒也在其中</div>
+        </div>
+        <p>抖音号 <span class="id-line"><strong>79854599220</strong></span>，昵称「谷粒」。点进主页，就能看到它每天的吃播、理毛和撒娇现场。</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary" onclick="goDouyin()">打开抖音搜索</button>
+          <button class="btn btn-ghost" onclick="copyId()">复制抖音号</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>
+      <div class="footer-brand">谷粒</div>
+      <div>一只牡丹苹果绿奥桂小鹦鹉 · 住在浙江温州</div>
+    </div>
+    <div>
+      <div>抖音号：79854599220</div>
+      <div class="note">头像与主页截图为真实素材，配图为同类牡丹鹦鹉示意照片</div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+  var toastEl = document.getElementById('toast');
+  var timer = null;
+  function showToast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    if(timer){clearTimeout(timer)}
+    timer = setTimeout(function(){toastEl.classList.remove('show')}, 2600);
+  }
+  window.goDouyin = function(){
+    window.open('https://www.douyin.com/search/%E8%B0%B7%E7%B2%92', '_blank');
+  };
+  window.copyId = function(){
+    var id = '79854599220';
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(id).then(function(){
+        showToast('已复制抖音号：' + id);
+      }, function(){
+        showToast('抖音号：' + id);
+      });
+    }else{
+      showToast('抖音号：' + id);
+    }
+  };
+})();
+</script>
+</body>
+</html>
